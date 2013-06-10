@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs = require('fs'),
 	vm = require('vm'),
 	readlines = require('./lib/readlines').readlines;
