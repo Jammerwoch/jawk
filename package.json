@@ -9,7 +9,7 @@
 	"license": "GPL",
 	"dependencies": {
 		"nomnom": "~1.6"
-	}
+	},
 	"keywords": [
 		"awk",
 		"data-driven",
