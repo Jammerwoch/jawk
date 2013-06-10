@@ -5,13 +5,13 @@ var fs = require('fs'),
 	readlines = require('./lib/readlines').readlines;
 
 var opts = require('nomnom')
+	.script('jawk')
 	.option( 'file', {
 		abbr: 'f',
 		flag: false,
 		help: 'Script file'
 	})
 	.option( 'verbose', {
-		abbr: 'v',
 		flag: true,
 		help: 'Verbose output'
 	})
@@ -24,11 +24,27 @@ var inputEncoding = 'utf8';
 if( opts.file ) {
 	program = fs.readFileSync( opts.file, 'utf8' ).replace(/\r/g,'');
 	// TODO: handle case of console input
-	inputFname = opts[0];
+	if( opts._.length === 0 ) {
+		console.log( 'error: you must specify an input file (console input not currently supported).' );
+		process.exit( 1 );
+	} else if( opts._.length === 1 ) {
+		inputFname = opts[0];
+	} else {
+		console.log( 'error: too many arguments.' );
+		process.exit( 1 );
+	}
 } else {
-	program = opts[0].replace(/\r/g,'');
-	// TODO: handle case of console input
-	inputFname = opts[1];
+	if( opts._.length < 2 ) {
+		console.log( 'error: you must specify a jawk program and an input file (console input not currently supported).' );
+		process.exit( 1 );
+	} else if( opts._.length === 2 ) {
+		program = opts[0].replace(/\r/g,'');
+		// TODO: handle case of console input
+		inputFname = opts[1];
+	} else {
+		console.log( 'error: too many arguments.' );
+		process.exit( 1 );
+	}
 }
 
 // note that for functions below, this!=jawkContext, so we have to use jawkContext explicitly.  this is a little
