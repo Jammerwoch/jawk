@@ -92,6 +92,17 @@ function executeAction( rule, context ) {
 	}
 }
 
+// taken from http://stackoverflow.com/questions/281264/remove-empty-elements-from-an-array-in-javascript
+Array.prototype.clean = function(deleteValue) {
+  for (var i = 0; i < this.length; i++) {
+    if (this[i] == deleteValue) {         
+      this.splice(i, 1);
+      i--;
+    }
+  }
+  return this;
+};
+
 if( begin ) executeAction( begin, jawkContext );
 
 readlines( inputFname, 'utf8', function(line) {
@@ -100,7 +111,7 @@ readlines( inputFname, 'utf8', function(line) {
 		if( line.match( rules[i].regex ) ) {
 			jawkContext.$0 = line;
 			// build record fields
-			var fields = line.split( new RegExp( jawkContext.RS ) );
+			var fields = line.split( new RegExp( jawkContext.RS ) ).clean('');
 			jawkContext.NR = fields.length;
 			var j;
 			for( j=0; j<fields.length; j++ ) jawkContext['$'+(j+1)] = fields[j];
