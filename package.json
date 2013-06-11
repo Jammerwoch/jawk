@@ -5,10 +5,11 @@
 	"contributors": [
 		"Ethan Brown <e@zepln.com>"
 	],
-	"version": "0.0.2beta",
+	"version": "0.0.3beta",
 	"license": "GPL",
 	"dependencies": {
-		"nomnom": "~1.6"
+		"nomnom": "~1.6",
+		"printf": "~0.1"
 	},
 	"keywords": [
 		"awk",

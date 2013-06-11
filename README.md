@@ -17,17 +17,22 @@ concept of awk (a terse, data-driven language), and implements that with JavaScr
 JavavScript every day (and if you work in the web world, you probably do), and you love awk, and you're tired
 of remembering a million syntactic idiosyncracies, well, awk just might be for you.
 
-What's Working / Not Working
-----------------------------
+What's Working
+--------------
 
-This list represents a high-level punch-list of what functionality has been implemented, and what functionality
-is left to do.
+This list represents a high-level punch-list of what functionality has been implemented.
 
-- [X] BEGIN and END rules
-- [X] Regular expression rules
-- [X] RS variable
-- [X] Field variables ($0 - $n and NF)
-- [X] NR and RS variables
-- [ ] stdin input
-- [ ] Multi-line functions
-- [ ] Expression rules (`$1='foo' { print() }`)
+- BEGIN and END rules
+- Regular expression rules
+- RS variable
+- Field variables ($0 - $n and NF)
+- NR and RS variables
+- printf support
+
+What's Not Working
+------------------
+
+- stdin input
+- Multi-line functions
+- Expression rules (`$1='foo' { print() }`)
+

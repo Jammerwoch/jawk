@@ -2,6 +2,7 @@
 
 var fs = require('fs'),
 	vm = require('vm'),
+	printf = require('printf'),
 	readlines = require('./lib/readlines').readlines;
 
 var opts = require('nomnom')
@@ -53,6 +54,7 @@ var jawkContext = vm.createContext({
 	RS: '\\s+',
 	NR: 0,
 	print: function(s) { console.log( s===undefined ? jawkContext.$0 : s ); },
+	printf: function() { console.log( printf.apply( this, arguments ) ); },
 	length: function(x) { return x===undefined ? jawkContext.$0.length : x.length; }
 });
 
