@@ -15,7 +15,7 @@ What jawk Isn't
 jawk is not a drop-in replacement for awk; what would be the point of that?  Instead, jawk takes the basic
 concept of awk (a terse, data-driven language), and implements that with JavaScript syntax.  If you use
 JavavScript every day (and if you work in the web world, you probably do), and you love awk, and you're tired
-of remembering a million syntactic idiosyncracies, well, awk just might be for you.
+of remembering a million syntactic idiosyncracies, well, jawk just might be for you.
 
 What's Working
 --------------

@@ -5,7 +5,7 @@
 	"contributors": [
 		"Ethan Brown <e@zepln.com>"
 	],
-	"version": "0.0.3beta",
+	"version": "0.0.4beta",
 	"license": "GPL",
 	"dependencies": {
 		"nomnom": "~1.6",
