@@ -6,7 +6,7 @@ Interpreter for jawk, an awk-like data proccessing language with JavaScript synt
 Dedication
 ----------
 
-jawk is dedicated to [Paul Inman](http://blogs.popart.com/author/paulinman), a gentleman and a scholar and,
+jawk is dedicated to [Paul Inman](https://www.linkedin.com/in/paullinman/), a gentleman and a scholar and,
 most importantly, a lover of [awk](http://www.gnu.org/software/gawk/manual/gawk.html).
 
 What jawk Isn't
